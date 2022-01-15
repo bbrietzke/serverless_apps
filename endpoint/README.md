@@ -1,0 +1,7 @@
+# Endpoint
+
+## Example
+```
+```
+
+## Parameters
