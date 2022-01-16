@@ -5,7 +5,7 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
 }
 
 resource "aws_iam_role" "lambda_exec" {
-  name = format("%s-%s", var.application_name, var.resource)
+  name = format("%s.role", var.function_name)
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
