@@ -3,7 +3,7 @@
 resource "aws_apigatewayv2_integration" "function" {
   api_id = var.application_id
 
-  integration_uri    = "${aws_lambda_function.function.invoke_arn}"
+  integration_uri    = aws_lambda_function.function.invoke_arn
   integration_type   = "AWS_PROXY"
   integration_method = "POST"
 }

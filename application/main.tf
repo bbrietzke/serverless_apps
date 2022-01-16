@@ -1,5 +1,5 @@
 resource "aws_apigatewayv2_api" "application" {
-  name          = "${var.app_name}"
+  name          = var.app_name
   protocol_type = "HTTP"
 }
 
@@ -12,7 +12,7 @@ resource "aws_cloudwatch_log_group" "application" {
 resource "aws_apigatewayv2_stage" "application_stage" {
   api_id = aws_apigatewayv2_api.application.id
 
-  name        = "${var.stage}"
+  name        = var.stage
   auto_deploy = true
 
   access_log_settings {
